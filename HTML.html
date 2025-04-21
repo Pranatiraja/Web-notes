@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML Notes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e1c36;
+      color: white;
+    }
+
+    .level-section {
+      padding: 50px 30px;
+      text-align: left;
+    }
+
+    .level-text {
+      font-size: 4rem;
+      font-weight: 1000;
+      letter-spacing: 2px;
+      text-transform: uppercase; /* Optional: to make it all caps */
+    }
+    
+
+    .level-text span {
+      color: orange;
+    }
+
+    .progress-bar {
+      margin-top: 20px;
+      width: 150px;
+      height: 20px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 30%;
+      background-color: limegreen;
+    }
+
+    .logo {
+      margin: 40px auto;
+      text-align: center;
+      opacity: 0.1;
+    }
+
+    .logo img {
+      max-width: 150px;
+    }
+
+    .page-break {
+      width: 100%;
+      height: 20px;
+      background-color: #0e1c36;
+      border-top: 4px solid #333;
+      margin: 50px 0;
+    }
+
+    .content-section {
+      padding: 50px 30px;
+      background-color: #0e1c36;
+    }
+
+    .content-section h2 {
+      color: orange;
+      margin-bottom: 10px;
+      font-size: 2.8rem;
+      font-weight: normal;
+    }
+
+    .content-section p {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin: 16px 0;
+     line-height: 1.7; /* Better readability */
+}
+
+    .doctype-display {
+      color: rgba(252, 252, 255, 0.7);
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-family: monospace;
+    }
+
+    .green-text {
+      color: limegreen; /* Green for the text next to DOCTYPE */
+    }
+
+    .pink-text{
+      color:hotpink;
+      
+    }
+
+    .blue-text {
+  color: dodgerblue; /* ya koi aur blue shade */
+}
+
+html {
+  color: white; /* HTML tag ka text white hoga */
+}
+
+h1 {
+      color: blue;
+      font-size: 2.5rem; /* Largest size */
+      font-weight: bold; /* Bold */
+    }
+
+    h2 {
+      color: blue;
+      font-size: 2rem; /* Smaller than h1 */
+      font-weight: bold; /* Bold */
+    }
+
+    h3 {
+      color: blue;
+      font-size: 1.7rem; /* Smaller than h2 */
+      font-weight: bold;
+    }
+
+    h4 {
+      color: blue;
+      font-size: 1.4rem; /* Smaller than h3 */
+      font-weight: bold;
+    }
+
+    h5 {
+      color: blue;
+      font-size: 1.2rem; /* Smaller than h4 */
+      font-weight: bold;
+    }
+
+    h6 {
+      color: blue;
+      font-size: 1rem; /* Smallest size */
+      font-weight: bold;
+    }
+
+
+    
+    pre {
+      font-family: monospace;
+      font-size: 16px;
+      color: white;
+      padding: 20px;
+      white-space: pre-wrap;
+      border-radius: 8px;
+    }
+
+    .white {
+    color: white;
+  }
+</style>
+
+      </style>
+</head>
+
+<body>
+ 
+</style>
+
+</style>
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- LEVEL 1 SECTION -->
+  <div class="level-section">
+    <div class="level-text">Level <span>1</span></div>
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" />
+    </div>
+  </div>
+
+  <!-- Page Break -->
+  <div class="page-break"></div>
+
+  <!-- CONTENT START -->
+  <div class="content-section">
+    <h2>HTML</h2>
+    <p><strong>Hyper Text Markup Language</strong></p>
+    <br><br>
+    <p>HTML is the code that is used to</p>
+    <p>structure a web page and its content.</p>
+    <br><br>
+    <p>The component used to design the</p>
+    <p>structure of websites are called HTML tags.</p>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- CONTENT START -->
+  <div class="content-section">
+    <h2>First HTML File</h2>
+    <p><strong>index.html</strong></p>
+    <p>it is the default name for a website's homepage</p>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- CONTENT START -->
+  <div class="content-section">
+    <h2>HTML Tag</h2>
+    <p>A Container for some content or other HTML tags</p>
+    <br><br>
+    <p>This is a paragraph</p>
+
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" />
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- CONTENT START -->
+  <div class="content-section">
+    <h2>Basic HTML Page</h2>
+
+    <div class="doctype-display">
+    &lt;!DOCTYPE html&gt;
+    <span class="green-text">                              tells browser you are using HTML5</span>
+    </div>
+
+    <pre>
+&lt;html&gt;<span class="green-text">                     root of an html documents.</span>
+</span>
+
+   &lt;head&gt; <span class="green-text">                  Container for metdata</span>
+
+
+  &lt;title&gt;My First Page&lt;/title&gt;  <span class="green-text">   Page tittle</span>
+  
+
+&lt;/head&gt;
+
+&lt;body&gt; <span class="green-text">             Container all data rendered by the browser </span>
+  
+
+     &lt;p&gt;hello world&lt;/p&gt; <span class="green-text">   paragraph tag</span>
+  
+
+   &lt;/body&gt;
+
+&lt;/html&gt;
+    </pre>
+  </div>
+  <!-- Page Break -->
+  <div class="page-break"></div>
+
+  <!-- CONTENT START -->
+  <div class="content-section">
+    <h2><strong>Quicky Ponits</strong></h2>
+    <p> Html tag is parent of head & body tag
+      <br><br>
+        Most of html element have opening & closing tags 
+        with content in between 
+        <br><br>
+        Some tags have no content in between,eg-<br>
+        <br><br>
+        we can use inspect element/view page source to edit html
+      </div>
+      <!-- Page Break -->
+      <div class="page-break"></div>
+    
+      <!-- CONTENT START -->
+      <div class="content-section">
+      <h2><strong>Comments in HTML</strong></h2>
+       <p>This is part of code that should not be paresd </p>
+       <div class="doctype-display">
+        <pre>
+          <span class="green-text">&lt;!--</span><span class="white-text"> This is a comment </span><span class="green-text">--&gt;</span>
+          </pre>
+          
+         <!-- Page Break -->
+      <div class="page-break"></div>
+    
+      <!-- CONTENT START -->
+      <div class="content-section">
+        <h2><strong>HTML is <span class="pink-text">NOT</span> case sensitive</strong></h2>
+        <span style="color: white;">&lt;html>= HTML&gt;</span>
+        <br><br>
+        <span style="color: white;">&lt;p>= P&gt;</span>
+        <br><br>
+        <span style="color: white;">&lt;head>= HEAD&gt;</span>
+        <br><br>
+        <span style="color: white;">&lt;body>= BODY&gt;</span>
+      </div>
+ <!-- Page Break -->
+ <div class="page-break"></div>
+
+ <!-- CONTENT START -->
+ <div class="level-section">
+  <div class="level-text">Level <span>2</span></div>
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" />
+  </div>
+</div>
+     <!-- Page Break -->
+     <div class="page-break"></div>
+    
+     <!-- CONTENT START -->
+     <div class="content-section">
+     <h2><strong>Basic HTML Tags </strong></h2>
+     <h2><span class="blue-text">HTML Attributes</span></h2>
+     <p>Attributes are used to add more information to the tag</p>
+     <span style="color: white;">&lt;html</span>
+     <span class="white-text">&lt;</span><span class="green-text">html lang="en"</span><span class="white-text">&gt;</span>
+    </pre>
+    </div>
+     <!-- Page Break -->
+     <div class="page-break"></div>
+    
+     <!-- CONTENT START -->
+     <div class="content-section">
+     <h2><strong>Heading Tags</strong></h2>
+      <p>Used to display headings in HTML</p>
+      <h1> <h1><span class="white">h1</span> (Most important)</h1>         </h1>
+      <h2> H2</h2>
+      <h3> H3</h3>
+      <h4> H4</h4>
+      <h5> H5</h5>
+      <h6> H6<span class="white"><span class="white">h1</span> (Most important)</h1>         </h1></span> (Most important)</h1>         </h1></h6>
+  
+       <!-- Page Break -->
+       <div class="page-break"></div>
+    
+       <!-- CONTENT START -->
+       <div class="content-section">
+       <h2><strong>Paragraph Tags</strong></h2>
+       <p>Used to add paragraphs in HTML</p>
+       <p>
+        <span class="white-text">&lt;P&gt;</span>
+        <span class="green-text">This is paragraph</span>
+        <span class="white-text">&lt;/P&gt;</span>
+      </p>
+    <!-- Page Break -->
+    <div class="page-break"></div>
+    
+    <!-- CONTENT START -->
+    <div class="content-section">
+    <h2><strong>Anchor Tag</strong></h2>
+    <P>Used to add links to your page</P>
+    <p>
+      <span class="white-text">&lt;a&gt;</span>
+      <span class="blue-text">href="https://google.com"></span>
+      <span class="green-text">&lt;/Google&gt;</span>
+      <span class="white-text">&lt;a/&gt;</span>
+    </p> 
+    
+ <!-- Page Break -->
+ <div class="page-break"></div>
+    
+ <!-- CONTENT START -->
+ <div class="content-section">
+ <h2><strong>Image Tag</strong></h2>
+ <P>Used to add images to your page</P>
+ <p>
+  <span class="white-text">&lt;Image&gt;</span>
+  <span class="blue-text">src="/image.png"></span>
+  <span class="green-text">&lt;/alt="Random Image"&gt;</span>
+  <span class="white-text">&lt;>&gt;</span>
+</p> 
+
+ <!-- Page Break -->
+ <div class="page-break"></div>
+    
+ <!-- CONTENT START -->
+ <div class="content-section">
+ <h2><strong>BrTag</strong></h2>
+ <p>Used to add next line(line breaks) to your page </p>
+  <p>
+    <span class="blue-text">&lt;br&gt;</span>
+  </p>
+
+<!-- Page Break -->
+<div class="page-break"></div>
+    
+<!-- CONTENT START -->
+<div class="content-section">
+<h2><strong>Bold, Italic & Underline Tags</strong></h2>
+<p>Used to add next line(line breaks) to your page </p>
+<p>
+  <span class="white-text">&lt;b&gt;</span>
+  <span class="blue-text">
+    <span class="green-text">Bold</span>
+  </span>
+  <span class="white-text">&lt;/b&gt;</span>
+</p>
+
+<p>
+  <span class="white-text">&lt;b&gt;</span>
+  <span class="blue-text">
+    <span class="green-text">Italic</span>
+  </span>
+  <span class="white-text">&lt;/i&gt;</span>
+</p>
+
+<p>
+  <span class="white-text">&lt;u&gt;</span>
+  <span class="blue-text">
+    <span class="green-text">underline</span>
+  </span>
+  <span class="white-text">&lt;/u&gt;</span>
+</p>
+<!-- Page Break -->
+<div class="page-break"></div>
+    
+<!-- CONTENT START -->
+<div class="content-section">
+<h2><strong>Big & Small Tags</strong></h2>
+<p>Used to display big & small text on your page </p>
+<p>
+  <span class="white-text">&lt;big&gt;</span>
+  <span class="blue-text">
+    <span class="green-text">Big</span>
+  </span>
+  <span class="white-text">&lt;/big&gt;</span>
+</p>
+
+<p>
+  <span class="white-text">&lt;small&gt;</span>
+  <span class="blue-text">
+    <span class="green-text">small</span>
+  </span>
+  <span class="white-text">&lt;/small&gt;</span>
+</p>
+<!-- Page Break -->
+<div class="page-break"></div>
+    
+<!-- CONTENT START -->
+<div class="content-section">
+<h2><strong>Hr Tags</strong></h2>
+<p>Used to display a horizontal ruler, used to separate content </p>
+<p>
+  <span class="blue-text">&lt;hr&gt;</span>
+</p>
+<!-- Page Break -->
+<div class="page-break"></div>
+    
+<!-- CONTENT START -->
+<div class="content-section">
+<h2><strong>Subscript & Superscript Tag</strong></h2>
+<p>Used to display a horizontal ruler, used to separate content </p>
+<p>
+  <span class="white text">&lt;sub&gt;</span>
+  <span class="green-text">&lt;subscript&gt;</span>
+  <span class="white text">&lt;/sub&gt;</span>
+  
+</p>
+
+<!-- Page Break -->
+<div class="page-break"></div>
+    
+<!-- CONTENT START -->
+<div class="content-section">
+<h2><strong>Pre Tag</strong></h2>
+<p>Used to display text as it is (without ignoring spaces & next line) </p>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
