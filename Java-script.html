@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Web Dev Notes</title>
   <style>
     body {
@@ -22,14 +22,22 @@
     }
 
     .topic + .topic {
-      margin-top: 10px; 
+      margin-top: 10px;
       page-break-before: always;
+    }
+
+    .topic::after {
+      content: "";
+      display: block;
+      height: 40px;
+      border-bottom: 1px dashed #ccc;
+      margin-top: 20px;
     }
 
     h1 {
       font-size: 26px;
       margin-bottom: 10px;
-     color: rgb(11, 11, 11);
+      color: rgb(11, 11, 11);
       padding: 8px;
       border-radius: 6px;
     }
@@ -92,9 +100,10 @@
         page-break-inside: avoid;
       }
 
-      .topic + .topic {
-        margin-top: 0;
-        page-break-before: always;
+      .topic::after {
+        border: none;
+        height: 0;
+        margin: 0;
       }
     }
   </style>
@@ -123,23 +132,56 @@
     <img src="js-logo.png" class="js-logo-top" />
     <h1>Setting up <span>VS Code</span> <code>&lt;/&gt;</code></h1>
     <p>It is a free & popular code editor by Microsoft.</p>
-
     <div class="watermark">Apna College</div>
   </div>
 
- <!-- Topic 3 -->
- <div class="topic">
-  <img src="js-logo.png" class="js-logo-top" />
-  <h1>Our Ist<span> JS Code</span></h1>
-  <p>Variables are containers for data.</p>
+  <!-- Topic 3 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
+    <h1>Our 1st <span>JS Code</span></h1>
+    <p>We write our first JavaScript program using console.log().</p>
+    <div class="watermark">Apna College</div>
+  </div>
 
-  <div class="watermark">Apna College</div>
+  <!-- Topic 4 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
+    <h1>Variables <span>in JS</span></h1>
+    <p>Variables are containers for storing data values. We declare them using var, let, or const.</p>
+    <div class="watermark">Apna College</div>
+  </div>
 
- <!-- Topic 3 -->
-<div class="topic">
-  <img src="js-logo.png" class="js-logo-top" />
-  <h1>Variables <span>in JS</span></h1>
-  <p>Variables are containers for data.</p>
+  <!-- Topic 5 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
+    <h1>Data <span>Types</span></h1>
+    <p>JavaScript me data types define karte hain kis type ka data store ho raha hai. Example: string, number, boolean, null, undefined, object, etc.</p>
+    <div class="watermark">Apna College</div>
+  </div>
 
-  <div class="watermark">Apna College</div>
-</div>
+  <!-- Topic 6 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
+    <h1><span>Operators</span> in JS</h1>
+    <p>Operators perform operations on variables and values. Example: +, -, *, /, %, ==, ===, &&, ||, etc.</p>
+    <div class="watermark">Apna College</div>
+  </div>
+
+  <!-- Topic 7 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
+    <h1><span>Functions</span> in JS</h1>
+    <p>Functions are blocks of code designed to perform a task. They are reusable and improve code structure.</p>
+    <div class="watermark">Apna College</div>
+  </div>
+
+  <!-- Topic 8 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
+    <h1><span>Loops</span> in JS</h1>
+    <p>Loops are used to run the same block of code multiple times. Example: for, while, do-while loops.</p>
+    <div class="watermark">Apna College</div>
+  </div>
+
+</body>
+</html>
