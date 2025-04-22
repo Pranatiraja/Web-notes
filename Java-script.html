@@ -1,89 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>What is JavaScript?</title>
+  <meta charset="UTF-8">
+  <title>Web Dev Notes</title>
   <style>
     body {
+      background: #f4f4f4;
       font-family: 'Segoe UI', sans-serif;
-      background: white;
-      color: #2c2c2c;
-      padding: 40px;
       margin: 0;
+      padding: 0;
+    }
+
+    .topic {
+      background: white;
+      padding: 25px;
+      max-width: 800px;
+      margin: 10px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
       position: relative;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      position: relative;
+    .topic + .topic {
+      margin-top: 10px; 
+      page-break-before: always;
     }
 
     h1 {
-      font-size: 32px;
-      font-weight: bold;
-    }
-
-    h1 span {
-      color: #00aaff;
-      text-decoration: underline;
+      font-size: 26px;
+      margin-bottom: 10px;
+     color: rgb(11, 11, 11);
+      padding: 8px;
+      border-radius: 6px;
     }
 
     p {
-      font-size: 18px;
-      margin-bottom: 30px;
+      font-size: 17px;
+    }
+
+    span {
+      color: #007BFF;
+    }
+
+    h1 code {
+      background: transparent;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      border: none;
+    }
+
+    .js-logo-top {
+      width: 50px;
+      float: right;
     }
 
     .flow {
       display: flex;
       align-items: center;
-      gap: 20px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #3b3b3b;
+      gap: 10px;
+      margin: 20px 0;
     }
 
     .arrow {
-      font-size: 24px;
+      font-size: 22px;
     }
 
     .computer-box {
-      background-color: #ffaa00;
+      background-color: orange;
+      padding: 6px 12px;
+      border-radius: 20px;
       color: white;
-      padding: 10px 25px;
-      border-radius: 30px;
+      font-weight: bold;
     }
 
     .watermark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-20deg);
-      font-size: 60px;
-      color: rgba(150, 150, 150, 0.2);
-      font-weight: bold;
-      pointer-events: none;
-      user-select: none;
+      font-size: 36px;
+      color: #ccc;
+      text-align: center;
+      opacity: 0.2;
+      margin-top: 30px;
     }
 
-    .js-logo-top {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      z-index: 10;
+    @media print {
+      body {
+        background: white;
+      }
+
+      .topic {
+        box-shadow: none;
+        page-break-inside: avoid;
+      }
+
+      .topic + .topic {
+        margin-top: 0;
+        page-break-before: always;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Local JS logo -->
-  <img src="js-logo.png" alt="JS Logo" class="js-logo-top" />
 
-  <div class="container">
+  <!-- Topic 1 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
     <h1>What is <span>JavaScript?</span></h1>
     <p>JS is a programming language. We use it to give instructions to the computer.</p>
-    
+
     <div class="flow">
       <span>Input (code)</span>
       <span class="arrow">➡️</span>
@@ -94,5 +117,29 @@
 
     <div class="watermark">Apna College</div>
   </div>
-</body>
-</html>
+
+  <!-- Topic 2 -->
+  <div class="topic">
+    <img src="js-logo.png" class="js-logo-top" />
+    <h1>Setting up <span>VS Code</span> <code>&lt;/&gt;</code></h1>
+    <p>It is a free & popular code editor by Microsoft.</p>
+
+    <div class="watermark">Apna College</div>
+  </div>
+
+ <!-- Topic 3 -->
+ <div class="topic">
+  <img src="js-logo.png" class="js-logo-top" />
+  <h1>Our Ist<span> JS Code</span></h1>
+  <p>Variables are containers for data.</p>
+
+  <div class="watermark">Apna College</div>
+
+ <!-- Topic 3 -->
+<div class="topic">
+  <img src="js-logo.png" class="js-logo-top" />
+  <h1>Variables <span>in JS</span></h1>
+  <p>Variables are containers for data.</p>
+
+  <div class="watermark">Apna College</div>
+</div>
