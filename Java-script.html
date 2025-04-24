@@ -2,186 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Web Dev Notes</title>
+  <title>JavaScript Notes</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: #f4f4f4;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    header {
+      background: linear-gradient(to right, #007BFF, #00c6ff);
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 200px;
+      background: #f8f9fa;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #nav a {
+      display: block;
+      margin-bottom: 10px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    #nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      margin-left: 220px;
+      padding: 20px;
     }
 
     .topic {
-      background: white;
-      padding: 25px;
-      max-width: 800px;
-      margin: 10px auto;
+      background: #fff;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.08);
-      position: relative;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
     }
 
-    .topic + .topic {
-      margin-top: 10px;
-      page-break-before: always;
+    .dark-mode .topic {
+      background: #1e1e1e;
+      color: #e0e0e0;
     }
 
-    .topic::after {
-      content: "";
-      display: block;
-      height: 40px;
-      border-bottom: 1px dashed #ccc;
-      margin-top: 20px;
+    .topic:hover {
+      transform: scale(1.01);
     }
 
-    h1 {
-      font-size: 26px;
-      margin-bottom: 10px;
-      color: rgb(11, 11, 11);
-      padding: 8px;
-      border-radius: 6px;
-    }
-
-    p {
-      font-size: 17px;
-    }
-
-    span {
+    h1 span {
       color: #007BFF;
     }
 
-    h1 code {
-      background: transparent;
+    .toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      background: #007BFF;
       color: white;
-      font-weight: bold;
-      font-size: 1em;
+      padding: 10px 20px;
       border: none;
-    }
-
-    .js-logo-top {
-      width: 50px;
-      float: right;
-    }
-
-    .flow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .arrow {
-      font-size: 22px;
-    }
-
-    .computer-box {
-      background-color: orange;
-      padding: 6px 12px;
       border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .toggle:hover {
+      background: #0056b3;
+    }
+
+    .collapse-btn {
+      margin-top: 10px;
+      padding: 6px 14px;
+      border: none;
+      background: #007BFF;
       color: white;
-      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 999;
     }
 
     .watermark {
-      font-size: 36px;
-      color: #ccc;
-      text-align: center;
-      opacity: 0.2;
-      margin-top: 30px;
-    }
-
-    @media print {
-      body {
-        background: white;
-      }
-
-      .topic {
-        box-shadow: none;
-        page-break-inside: avoid;
-      }
-
-      .topic::after {
-        border: none;
-        height: 0;
-        margin: 0;
-      }
+      font-size: 18px;
+      color: #aaa;
+      text-align: right;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Topic 1 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1>What is <span>JavaScript?</span></h1>
-    <p>JS is a programming language. We use it to give instructions to the computer.</p>
+  <div id="nav">
+    <h3>Topics</h3>
+    <a href="#t1">What is JS?</a>
+    <a href="#t2">VS Code</a>
+    <a href="#t3">First JS Code</a>
+    <a href="#t4">Variables</a>
+    <a href="#t5">Data Types</a>
+    <a href="#t6">Operators</a>
+    <a href="#t7">Functions</a>
+    <a href="#t8">Loops</a>
+  </div>
 
-    <div class="flow">
-      <span>Input (code)</span>
-      <span class="arrow">➡️</span>
-      <span class="computer-box">Computer</span>
-      <span class="arrow">➡️</span>
-      <span>Output</span>
+  <button class="toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  <button class="scroll-top" onclick="scrollToTop()">⬆</button>
+
+  <div class="container">
+    <header>JavaScript</header>
+
+    <div id="t1" class="topic">
+      <h1>What is <span>JavaScript?</span></h1>
+      <p>JS is a programming language. We use it to give instructions to the computer.</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark">College</div>
     </div>
 
-    <div class="watermark">Apna College</div>
+    <div id="t2" class="topic">
+      <h1>Setting up <span>VS Code</span></h1>
+      <p>It is a free & popular code editor by Microsoft.</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark"> College</div>
+    </div>
+
+    <div id="t3" class="topic">
+      <h1>Our 1st <span>JS Code</span></h1>
+      <p>We write our first JavaScript program using console.log().</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark"> College</div>
+    </div>
+
+    <div id="t4" class="topic">
+      <h1>Variables <span>in JS</span></h1>
+      <p>Variables are containers for storing data values. We declare them using var, let, or const.</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark">College</div>
+    </div>
+
+    <div id="t5" class="topic">
+      <h1>Data <span>Types</span></h1>
+      <p>JavaScript me data types define karte hain kis type ka data store ho raha hai. Example: string, number, boolean, null, undefined, object, etc.</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark">College</div>
+    </div>
+
+    <div id="t6" class="topic">
+      <h1><span>Operators</span> in JS</h1>
+      <p>Operators perform operations on variables and values. Example: +, -, *, /, %, ==, ===, &&, ||, etc.</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark">College</div>
+    </div>
+
+    <div id="t7" class="topic">
+      <h1><span>Functions</span> in JS</h1>
+      <p>Functions are blocks of code designed to perform a task. They are reusable and improve code structure.</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark">College</div>
+    </div>
+
+    <div id="t8" class="topic">
+      <h1><span>Loops</span> in JS</h1>
+      <p>Loops are used to run the same block of code multiple times. Example: for, while, do-while loops.</p>
+      <button class="collapse-btn" onclick="toggleContent(this)">Collapse</button>
+      <div class="watermark"> College</div>
+    </div>
+
   </div>
 
-  <!-- Topic 2 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1>Setting up <span>VS Code</span> <code>&lt;/&gt;</code></h1>
-    <p>It is a free & popular code editor by Microsoft.</p>
-    <div class="watermark">Apna College</div>
-  </div>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
 
-  <!-- Topic 3 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1>Our 1st <span>JS Code</span></h1>
-    <p>We write our first JavaScript program using console.log().</p>
-    <div class="watermark">Apna College</div>
-  </div>
+    function toggleContent(btn) {
+      const p = btn.previousElementSibling;
+      if (p.style.display === 'none') {
+        p.style.display = 'block';
+        btn.innerText = 'Collapse';
+      } else {
+        p.style.display = 'none';
+        btn.innerText = 'Expand';
+      }
+    }
 
-  <!-- Topic 4 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1>Variables <span>in JS</span></h1>
-    <p>Variables are containers for storing data values. We declare them using var, let, or const.</p>
-    <div class="watermark">Apna College</div>
-  </div>
+    window.onscroll = function () {
+      document.querySelector('.scroll-top').style.display = window.scrollY > 300 ? 'flex' : 'none';
+    }
 
-  <!-- Topic 5 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1>Data <span>Types</span></h1>
-    <p>JavaScript me data types define karte hain kis type ka data store ho raha hai. Example: string, number, boolean, null, undefined, object, etc.</p>
-    <div class="watermark">Apna College</div>
-  </div>
-
-  <!-- Topic 6 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1><span>Operators</span> in JS</h1>
-    <p>Operators perform operations on variables and values. Example: +, -, *, /, %, ==, ===, &&, ||, etc.</p>
-    <div class="watermark">Apna College</div>
-  </div>
-
-  <!-- Topic 7 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1><span>Functions</span> in JS</h1>
-    <p>Functions are blocks of code designed to perform a task. They are reusable and improve code structure.</p>
-    <div class="watermark">Apna College</div>
-  </div>
-
-  <!-- Topic 8 -->
-  <div class="topic">
-    <img src="js-logo.png" class="js-logo-top" />
-    <h1><span>Loops</span> in JS</h1>
-    <p>Loops are used to run the same block of code multiple times. Example: for, while, do-while loops.</p>
-    <div class="watermark">Apna College</div>
-  </div>
-
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
